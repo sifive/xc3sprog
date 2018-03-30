@@ -1237,11 +1237,8 @@ int programXCF(Jtag &jtag, DeviceDB &db, int argc, char **args,
                       return res;
                   }
               }
-              int res = alg->verify(cur_bitfile);
+              alg->verify(cur_bitfile);
               alg->disable();
-              if (res) {
-                  return res;
-              }
           }
 
           prom_pos += current_promlen;
